@@ -1,0 +1,5 @@
+Resources:
+- Entitlements: https://developer.apple.com/documentation/xcode/adding-capabilities-to-your-app
+- https://letvar.medium.com/time-after-screen-time-part-1-the-underworld-of-a-barely-known-api-2574a2e6922a#:~:text=First%20of%20all%3A%20the%20Family,use%20it%20in%20your%20app.
+- https://developer.apple.com/documentation/screentime
+- https://docs.swift.org/swift-book/documentation/the-swift-programming-language/

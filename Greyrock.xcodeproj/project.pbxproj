@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		8CD5D1B92CA0D0EF001E1A12 /* scratchPaper.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CD5D1B82CA0D0DD001E1A12 /* scratchPaper.txt */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		8CE963162CA0A02E0034EFFE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8CD5D1B72CA0CAD7001E1A12 /* Greyrock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Greyrock.entitlements; sourceTree = "<group>"; };
+		8CD5D1B82CA0D0DD001E1A12 /* scratchPaper.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = scratchPaper.txt; sourceTree = "<group>"; };
 		8CE963052CA0A02C0034EFFE /* Greyrock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Greyrock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CE963152CA0A02E0034EFFE /* GreyrockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GreyrockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CE9631F2CA0A02E0034EFFE /* GreyrockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GreyrockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +81,8 @@
 		8CE962FC2CA0A02C0034EFFE = {
 			isa = PBXGroup;
 			children = (
+				8CD5D1B82CA0D0DD001E1A12 /* scratchPaper.txt */,
+				8CD5D1B72CA0CAD7001E1A12 /* Greyrock.entitlements */,
 				8CE963072CA0A02C0034EFFE /* Greyrock */,
 				8CE963182CA0A02E0034EFFE /* GreyrockTests */,
 				8CE963222CA0A02E0034EFFE /* GreyrockUITests */,
@@ -212,6 +220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CD5D1B92CA0D0EF001E1A12 /* scratchPaper.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
