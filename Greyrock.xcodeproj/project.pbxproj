@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C1C3C042CA12FC800680650 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 8C1C3C032CA12FBC00680650 /* README */; };
+		8C13F12C2CA1F9C900FC4CA3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8C13F12B2CA1F9C900FC4CA3 /* README.md */; };
 		8CD5D1B92CA0D0EF001E1A12 /* scratchPaper.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CD5D1B82CA0D0DD001E1A12 /* scratchPaper.txt */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8C1C3C032CA12FBC00680650 /* README */ = {isa = PBXFileReference; explicitFileType = net.daringfireball.markdown; path = README; sourceTree = "<group>"; };
+		8C13F12B2CA1F9C900FC4CA3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8CD5D1B72CA0CAD7001E1A12 /* Greyrock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Greyrock.entitlements; sourceTree = "<group>"; };
 		8CD5D1B82CA0D0DD001E1A12 /* scratchPaper.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = scratchPaper.txt; sourceTree = "<group>"; };
 		8CE963052CA0A02C0034EFFE /* Greyrock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Greyrock.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,7 +83,7 @@
 		8CE962FC2CA0A02C0034EFFE = {
 			isa = PBXGroup;
 			children = (
-				8C1C3C032CA12FBC00680650 /* README */,
+				8C13F12B2CA1F9C900FC4CA3 /* README.md */,
 				8CD5D1B82CA0D0DD001E1A12 /* scratchPaper.txt */,
 				8CD5D1B72CA0CAD7001E1A12 /* Greyrock.entitlements */,
 				8CE963072CA0A02C0034EFFE /* Greyrock */,
@@ -223,7 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C1C3C042CA12FC800680650 /* README in Resources */,
+				8C13F12C2CA1F9C900FC4CA3 /* README.md in Resources */,
 				8CD5D1B92CA0D0EF001E1A12 /* scratchPaper.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +424,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Ian.Greyrock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -453,6 +456,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Ian.Greyrock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
