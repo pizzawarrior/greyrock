@@ -6,52 +6,41 @@
 //
 
 import SwiftUI
+import FamilyControls
 
 struct ContentView: View {
     @StateObject var viewModel = InstagramUsageViewModel()
-
+    @State private var isPickerPresented = false
+    
     var body: some View {
-        ZStack {
-            VStack {
-                Text("Set Instagram Usage Time Limit (in minutes)")
-                    .font(.headline)
-                    .padding()
-
-                Slider(value: $viewModel.model.timeLimit, in: 1...60, step: 1) {
-                    Text("Time Limit")
-                }
-                Text("\(Int(viewModel.model.timeLimit)) minutes")
-                    .padding()
-
-                ColorPicker("Choose Filter Color", selection: $viewModel.model.selectedColor)
-                    .padding()
-
-                Button(action: {
-                    viewModel.requestAuthorization()
-                    viewModel.startTrackingInstagram()
-                }) {
-                    Text("Start Timer")
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
+        VStack {
+            Text("Set Instagram Usage Time Limit (in minutes)")
+                .font(.headline)
                 .padding()
-
-                Text("Time spent on Instagram: \(Int(viewModel.model.timeSpent)) minutes")
-                    .padding()
-
-                if viewModel.isTimeExceeded {
-                    Text("Time limit exceeded!")
-                        .foregroundColor(.red)
-                        .bold()
+            
+            Slider(value: $viewModel.model.timeLimit, in: 1...60, step: 1) {
+                Text("Time Limit")
+            }
+            Text("\(Int(viewModel.model.timeLimit)) minutes")
+                .padding()
+            
+            Button("Select Apps for Monitoring") {
+                isPickerPresented = true
+            }
+            .familyActivityPicker(isPresented: $isPickerPresented, selection: $viewModel.activitySelection)
+            .padding()
+            
+            Button("Start Tracking") {
+                Task {
+                    await viewModel.requestAuthorization()
+                    viewModel.startTrackingSelectedApps()
                 }
             }
-
-            // Overlay filter if time exceeded
-            if viewModel.isTimeExceeded {
-                OverlayView(selectedColor: viewModel.model.selectedColor)
-            }
+            .padding()
+        }
+        .onChange(of: viewModel.activitySelection) { newSelection in
+            // Save the selected apps when the selection changes
+            viewModel.saveSelectedApps()
         }
     }
 }

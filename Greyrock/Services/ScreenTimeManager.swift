@@ -13,28 +13,47 @@ import ManagedSettings
 class ScreenTimeManager {
     static let shared = ScreenTimeManager()
 
+    // Request screen time authorization
     func requestScreenTimeAuthorization(completion: @escaping (Bool) -> Void) {
-        AuthorizationCenter.shared.requestAuthorization(for: .individual) { result in
-            switch result {
-            case .success:
-                completion(true)
-            case .failure(let error):
+        Task {
+            do {
+                // request authorization
+                try await AuthorizationCenter.shared.requestAuthorization(for: .individual)
+                completion(true)  // auth granted
+            } catch {
                 print("Authorization failed: \(error.localizedDescription)")
-                completion(false)
+                completion(false)  // auth failed
             }
         }
     }
 
-//    Why is this a dupe in InstagramUsageViewModel?
-    func startMonitoringInstagram(timeLimit: Double, completion: @escaping () -> Void) {
-        let instagramToken = ApplicationToken("com.burbn.instagram")
+    // Start monitoring selected apps (replaces direct Instagram reference)
+    func startMonitoringApps(selectedApps: Set<ApplicationToken>, completion: @escaping () -> Void) {
+        guard !selectedApps.isEmpty else {
+            print("No apps selected for monitoring.")
+            return
+        }
 
+        // Create a daily schedule
         let schedule = DeviceActivitySchedule(
             intervalStart: DateComponents(hour: 0, minute: 0),
-            intervalEnd: DateComponents(hour: 23, minute: 59)
+            intervalEnd: DateComponents(hour: 23, minute: 59),
+            repeats: true
         )
 
+        // Name the activity for monitoring
+        let activityName = DeviceActivityName("com.greyrock.monitoring")
+
+        // Start monitoring the selected apps
         let center = DeviceActivityCenter()
-        center.startMonitoring(.daily(during: schedule, applications: [instagramToken]))
+        do {
+            try center.startMonitoring(activityName, during: schedule)
+            // Call completion when monitoring starts successfully
+            completion()
+        } catch {
+            print("Failed to start monitoring: \(error.localizedDescription)")
+            completion()
+        }
     }
 }
+
