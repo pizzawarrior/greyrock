@@ -8,12 +8,13 @@
 import FamilyControls
 import DeviceActivity
 import SwiftUI
+import ManagedSettings
 
 class ScreenTimeManager {
     static let shared = ScreenTimeManager()
 
     func requestScreenTimeAuthorization(completion: @escaping (Bool) -> Void) {
-        AuthorizationCenter.shared.requestAuthorization { result in
+        AuthorizationCenter.shared.requestAuthorization(for: .individual) { result in
             switch result {
             case .success:
                 completion(true)
@@ -24,6 +25,7 @@ class ScreenTimeManager {
         }
     }
 
+//    Why is this a dupe in InstagramUsageViewModel?
     func startMonitoringInstagram(timeLimit: Double, completion: @escaping () -> Void) {
         let instagramToken = ApplicationToken("com.burbn.instagram")
 

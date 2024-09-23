@@ -1,5 +1,16 @@
 Resources:
-- Entitlements: https://developer.apple.com/documentation/xcode/adding-capabilities-to-your-app
+
+Entitlements:
+- https://developer.apple.com/documentation/xcode/adding-capabilities-to-your-app
+
+Medium Article about Entitlements
 - https://letvar.medium.com/time-after-screen-time-part-1-the-underworld-of-a-barely-known-api-2574a2e6922a#:~:text=First%20of%20all%3A%20the%20Family,use%20it%20in%20your%20app.
+
+ScreenTime Docs (Apple)
 - https://developer.apple.com/documentation/screentime
+
+Swift Docs:
 - https://docs.swift.org/swift-book/documentation/the-swift-programming-language/
+
+GitHub guide:
+- https://github.com/swiftlang/swift/blob/main/docs/HowToGuides/GettingStarted.md#installing-dependencies
