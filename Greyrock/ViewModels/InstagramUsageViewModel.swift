@@ -4,9 +4,7 @@
 //
 //  Created by ian norstad on 9/22/24.
 //
-
-//
-// Handle authorization/ UI logic/ state management
+// request auth from ScreenTimeManager/ UI logic/ Run timer/ save and load selected apps
 //
 import SwiftUI
 import FamilyControls
@@ -28,7 +26,7 @@ class InstagramUsageViewModel: ObservableObject {
         }
     }
 
-    // Request screen time authorization via ScreenTimeManager
+        // Request screen time authorization via ScreenTimeManager
         func requestAuthorization() {
             ScreenTimeManager.shared.requestScreenTimeAuthorization { authorized in
                 if authorized {
@@ -38,15 +36,32 @@ class InstagramUsageViewModel: ObservableObject {
                 }
             }
         }
+    
+        // start monitoring the apps selected via the FamilyActivityPicker
+       func startTrackingSelectedApps() {
+           let selectedApps = activitySelection.applicationTokens
 
-    func stopTrackingInstagram() {
+           // use ScreenTimeManager to start monitoring
+           ScreenTimeManager.shared.startMonitoringApps(selectedApps: selectedApps) {
+               // timer for testing purposes; 1 minute
+               self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+                   self.model.timeSpent += 1
+                   if self.model.timeSpent >= self.model.timeLimit {
+                       self.isTimeExceeded = true
+                       self.stopTrackingApps()
+                   }
+               }
+           }
+       }
+
+    func stopTrackingApps() {
         timer?.invalidate()
         timer = nil
     }
 
     func saveSelectedApps() {
         selectedAppIdentifiers = activitySelection.applicationTokens.compactMap { token in
-            Application(token: token).bundleIdentifier // Get bundle identifier from Application
+            Application(token: token).bundleIdentifier // get bundle identifier from Application
         }
         UserDefaults.standard.set(selectedAppIdentifiers, forKey: "selectedApps")
     }

@@ -4,6 +4,7 @@
 //
 //  Created by ian norstad on 9/22/24.
 //
+// Handle requesting auth/ 
 
 import FamilyControls
 import DeviceActivity

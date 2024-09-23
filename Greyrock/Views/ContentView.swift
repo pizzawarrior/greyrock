@@ -4,6 +4,7 @@
 //
 //  Created by ian norstad on 9/22/24.
 //
+// handle state
 
 import SwiftUI
 import FamilyControls
@@ -14,7 +15,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text("Set Instagram Usage Time Limit (in minutes)")
+            Text("Set App Usage Time Limit (in minutes)")
                 .font(.headline)
                 .padding()
             
@@ -32,16 +33,15 @@ struct ContentView: View {
             
             Button("Start Tracking") {
                 Task {
-                    await viewModel.requestAuthorization()
+                    viewModel.requestAuthorization()
                     viewModel.startTrackingSelectedApps()
                 }
             }
             .padding()
         }
-        .onChange(of: viewModel.activitySelection) { newSelection in
-            // Save the selected apps when the selection changes
+        // save the selected apps when the selection changes
+        .onChange(of: viewModel.activitySelection) {
             viewModel.saveSelectedApps()
         }
     }
 }
-
