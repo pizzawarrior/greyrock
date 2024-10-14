@@ -1,7 +1,7 @@
 ## GreyRock
 
 ### Purpose:
-A simple mobile app that helps people contain and reduce their social media exposure. \
+A simple mobile app that helps people contain their social media exposure. \
 Works with:
 - Instagram
 - TikTok
@@ -17,3 +17,12 @@ GreyRock is a reminder that your time is the most valuable thing you own.
 :sun_with_face: “Give me the splendid, silent sun with all his beams full-dazzling.” \
 ― Walt Whitman, *Leaves of Grass*
 
+***
+
+### Technical Features
+- GreyRock is made with Swift in Xcode
+- Test coverage via Swift Testing
+
+***
+
+<img width="750" alt="Screenshot 2024-10-13 at 8 35 13 PM" src="https://github.com/user-attachments/assets/a4de84ae-bc5a-430e-8413-6a9e1290e114">
