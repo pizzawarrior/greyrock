@@ -10,7 +10,7 @@ import SwiftUI
 import FamilyControls
 
 struct ContentView: View {
-    @StateObject var viewModel = InstagramUsageViewModel()
+    @StateObject var viewModel = SocialUsageViewModel()
     @State private var isPickerPresented = false
     
     var body: some View {

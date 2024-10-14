@@ -1,5 +1,5 @@
 //
-//  InstagramUsageViewModel.swift
+//  SocialUsageViewModel.swift
 //  Greyrock
 //
 //  Created by ian norstad on 9/22/24.
@@ -11,8 +11,8 @@ import FamilyControls
 import DeviceActivity
 import ManagedSettings
 
-class InstagramUsageViewModel: ObservableObject {
-    @Published var model = InstagramUsageModel(timeLimit: 20, timeSpent: 0, selectedColor: .gray)
+class SocialUsageViewModel: ObservableObject {
+    @Published var model = SocialUsageModel(timeLimit: 20, timeSpent: 0, selectedColor: .gray)
     @Published var isTimeExceeded = false
     @Published var selectedAppIdentifiers: [String] = []
     @Published var activitySelection = FamilyActivitySelection()

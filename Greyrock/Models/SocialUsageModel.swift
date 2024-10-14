@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct InstagramUsageModel {
+struct SocialUsageModel {
     var timeLimit: Double // in minutes
     var timeSpent: Double // in minutes
     var selectedColor: Color // overlay color

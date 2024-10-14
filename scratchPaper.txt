@@ -1,5 +1,8 @@
 Resources:
 
+Current status: 9/23: Need developer membership through apple
+- https://forums.developer.apple.com/forums/thread/708285
+
 Entitlements:
 - https://developer.apple.com/documentation/xcode/adding-capabilities-to-your-app
 
