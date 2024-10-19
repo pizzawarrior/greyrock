@@ -1,16 +1,18 @@
 ## GreyRock
+*Currently in testing with the goal of release through Apple's App Store*
 
 ### Purpose:
-A simple mobile app that helps people contain their social media exposure. \
+A simple mobile app that helps people manage their social media exposure. \
 Works with:
 - Instagram
 - TikTok
 - Facebook
 - Snapchat
+- X
 
 ### What Does It Do?
-Users can select which apps they would like to manage, and set a time limit for engagement. \
-:alarm_clock: Once the time is up a transparent grey layer appears over the full screen, allowing content to still come through, but in a reduced capacity.
+Users can select which apps they would like to monitor, and set a time limit for engagement. \
+:alarm_clock: Once the time is up a transparent grey layer appears over the full screen, allowing content to still come through in a desaturated way.
 
 GreyRock is a reminder that your time is the most valuable thing you own.
 
