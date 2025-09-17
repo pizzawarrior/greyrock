@@ -1,5 +1,5 @@
 ## GreyRock
-*Currently in testing with the goal of release through Apple's App Store*
+*Currently in testing*
 
 ### Purpose:
 A simple mobile app that helps people manage their social media exposure. \
